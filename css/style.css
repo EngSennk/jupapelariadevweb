@@ -435,7 +435,7 @@ a {
 
     width: 100%;
 
-    max-height: 470px;
+    max-height: 650px;
 
     object-fit: cover;
 
@@ -723,7 +723,7 @@ a {
         var(--ju-text-light);
 
     font-size:
-        0.9rem;
+        20px;
 }
 
 
@@ -908,7 +908,7 @@ a {
 
 
 /* =========================================================
-   INDICAÇÃO DE AMPLIAÇÃO
+   BOTÃO DE AMPLIAR (ZOOM)
 ========================================================= */
 
 .zoom-hint {
@@ -931,28 +931,37 @@ a {
 
     justify-content: center;
 
+    border: 0;
+
     border-radius: 50%;
 
     background:
-        rgba(255, 255, 255, 0.90);
+        rgba(255, 255, 255, 0.92);
 
     color:
         var(--ju-brown);
 
     box-shadow:
-        0 4px 15px rgba(0, 0, 0, 0.12);
+        0 4px 15px rgba(0, 0, 0, 0.16);
 
-    pointer-events:
-        none;
+    cursor:
+        pointer;
 
-    opacity: 0;
+    opacity: 0.85;
 
     transform:
-        scale(0.85);
+        scale(1);
 
     transition:
         opacity 0.25s ease,
-        transform 0.25s ease;
+        transform 0.25s ease,
+        background 0.2s ease;
+
+    -webkit-appearance:
+        none;
+
+    appearance:
+        none;
 }
 
 
@@ -961,7 +970,26 @@ a {
     opacity: 1;
 
     transform:
-        scale(1);
+        scale(1.08);
+}
+
+
+.zoom-hint:hover {
+
+    background:
+        white;
+}
+
+
+.zoom-hint:focus-visible {
+
+    opacity: 1;
+
+    outline:
+        3px solid var(--ju-rose);
+
+    outline-offset:
+        2px;
 }
 
 
@@ -970,6 +998,9 @@ a {
     width: 17px;
 
     height: 17px;
+
+    pointer-events:
+        none;
 }
 
 
@@ -2085,7 +2116,8 @@ a {
    TELA CHEIA REAL DO NAVEGADOR
 ========================================================= */
 
-.image-lightbox:fullscreen {
+.image-lightbox:fullscreen,
+.image-lightbox:-webkit-full-screen {
 
     padding:
         0;
@@ -2095,7 +2127,8 @@ a {
 }
 
 
-.image-lightbox:fullscreen .lightbox-content {
+.image-lightbox:fullscreen .lightbox-content,
+.image-lightbox:-webkit-full-screen .lightbox-content {
 
     width:
         100vw;

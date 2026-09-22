@@ -121,6 +121,132 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =====================================================
+       SUPORTE A FULLSCREEN (com fallback para Safari/webkit)
+       -----------------------------------------------------
+       iOS Safari não implementa a Fullscreen API para
+       elementos genéricos (só para <video>), então tudo
+       aqui é tratado como um "extra": se não for suportado,
+       o botão dedicado de tela cheia é escondido e a
+       visualização ampliada (que já cobre a tela inteira
+       via CSS) continua funcionando normalmente.
+    ===================================================== */
+
+    const fullscreenSupported =
+        !!(
+            document.fullscreenEnabled ||
+            document.webkitFullscreenEnabled
+        );
+
+
+    if (
+        !fullscreenSupported &&
+        lightboxFullscreen
+    ) {
+
+        lightboxFullscreen.style.display =
+            'none';
+
+    }
+
+
+    function getFullscreenElement() {
+
+        return (
+            document.fullscreenElement ||
+            document.webkitFullscreenElement ||
+            null
+        );
+
+    }
+
+
+    function requestElementFullscreen(element) {
+
+        if (!element) {
+
+            return Promise.reject(
+                new Error('Elemento inválido')
+            );
+
+        }
+
+
+        if (element.requestFullscreen) {
+
+            return element.requestFullscreen();
+
+        }
+
+
+        if (element.webkitRequestFullscreen) {
+
+            return element.webkitRequestFullscreen();
+
+        }
+
+
+        return Promise.reject(
+            new Error('Fullscreen não suportado')
+        );
+
+    }
+
+
+    function exitElementFullscreen() {
+
+        if (document.exitFullscreen) {
+
+            return document.exitFullscreen();
+
+        }
+
+
+        if (document.webkitExitFullscreen) {
+
+            return document.webkitExitFullscreen();
+
+        }
+
+
+        return Promise.resolve();
+
+    }
+
+
+    function updateFullscreenIcon() {
+
+        if (!lightboxFullscreen) {
+            return;
+        }
+
+
+        const isFullscreen =
+            !!getFullscreenElement();
+
+
+        lightboxFullscreen.innerHTML =
+            isFullscreen
+                ? '<i data-lucide="minimize"></i>'
+                : '<i data-lucide="maximize"></i>';
+
+
+        lightboxFullscreen.setAttribute(
+            'aria-label',
+            isFullscreen
+                ? 'Sair da tela cheia'
+                : 'Entrar em tela cheia'
+        );
+
+
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+    }
+
+
+
+    /* =====================================================
        FUNÇÕES DO LIGHTBOX
     ===================================================== */
 
@@ -220,11 +346,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         /*
-         * IMPORTANTE:
-         * Não iniciamos nenhum autoplay aqui.
+         * Tenta entrar em tela cheia nativa automaticamente
+         * ao abrir a imagem — ainda dentro da mesma cadeia
+         * síncrona do clique do usuário, o que é exigido
+         * pelos navegadores para permitir a chamada.
          *
-         * O modo ampliado permanece totalmente manual.
+         * Se o navegador bloquear ou não suportar (ex: iOS
+         * Safari), o catch garante que nada quebre: a
+         * visualização ampliada por CSS já cobre a tela
+         * inteira e continua 100% navegável.
          */
+
+        if (fullscreenSupported) {
+
+            requestElementFullscreen(lightbox)
+                .catch(() => {
+
+                    /*
+                     * Fullscreen automático bloqueado ou
+                     * indisponível neste momento — sem problema,
+                     * o modo ampliado continua funcionando.
+                     */
+
+                });
+
+        }
 
 
         setTimeout(() => {
@@ -251,9 +397,9 @@ document.addEventListener('DOMContentLoaded', () => {
          * sai primeiro do fullscreen real.
          */
 
-        if (document.fullscreenElement) {
+        if (getFullscreenElement()) {
 
-            document.exitFullscreen()
+            exitElementFullscreen()
                 .catch(() => {});
 
         }
@@ -642,7 +788,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =====================================================
-       FULLSCREEN REAL DO NAVEGADOR
+       BOTÃO MANUAL DE TELA CHEIA
     ===================================================== */
 
     if (lightboxFullscreen) {
@@ -653,13 +799,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 try {
 
-                    if (!document.fullscreenElement) {
+                    if (!getFullscreenElement()) {
 
-                        await lightbox.requestFullscreen();
+                        await requestElementFullscreen(lightbox);
 
                     } else {
 
-                        await document.exitFullscreen();
+                        await exitElementFullscreen();
 
                     }
 
@@ -686,29 +832,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /*
      * Atualiza ícone quando entra/sai
-     * do fullscreen real.
+     * do fullscreen real (padrão e com prefixo webkit).
      */
 
     document.addEventListener(
         'fullscreenchange',
-        () => {
-
-            if (!lightboxFullscreen) {
-                return;
-            }
+        updateFullscreenIcon
+    );
 
 
-            lightboxFullscreen.innerHTML =
-                document.fullscreenElement
-                    ? '<i data-lucide="minimize"></i>'
-                    : '<i data-lucide="maximize"></i>';
-
-
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-
-        }
+    document.addEventListener(
+        'webkitfullscreenchange',
+        updateFullscreenIcon
     );
 
 
@@ -764,6 +899,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextButton =
             carousel.querySelector(
                 '.carousel-btn.next'
+            );
+
+
+        const zoomButton =
+            carousel.querySelector(
+                '.zoom-hint'
             );
 
 
@@ -991,6 +1132,32 @@ document.addEventListener('DOMContentLoaded', () => {
                     event.stopPropagation();
 
                     nextSlide();
+
+                }
+            );
+
+        }
+
+
+
+        /* =================================================
+           BOTÃO DE AMPLIAR (ZOOM) → LIGHTBOX
+        ================================================== */
+
+        if (zoomButton) {
+
+            zoomButton.addEventListener(
+                'click',
+                event => {
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+                    openLightbox(
+                        carousel,
+                        currentIndex
+                    );
 
                 }
             );
