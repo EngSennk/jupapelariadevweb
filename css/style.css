@@ -106,6 +106,7 @@ a {
     padding:
         0 20px;
 }
+.
 
 
 /* =========================================================
@@ -457,7 +458,7 @@ a {
         var(--ju-sage);
 
     font-size:
-        0.78rem;
+      30px;
 
     font-weight:
         700;
@@ -498,7 +499,7 @@ a {
         #452317;
 
     font-size:
-        1.05rem;
+        25px;
 }
 
 
@@ -575,7 +576,7 @@ a {
         var(--ju-sage);
 
     font-size:
-        0.78rem;
+       30px;
 
     font-weight:
         700;
@@ -1415,16 +1416,10 @@ a {
 .site-footer {
 
     padding:
-        60px 20px 20px;
+        6px 2px 2px;
 
     background:
-        var(--ju-brown);
-
-    color:
-        white;
-
-    border-top:
-        8px solid var(--ju-rose);
+        rgb(255, 230, 206);
 }
 
 
@@ -1432,17 +1427,17 @@ a {
 
     width: 100%;
 
-    max-width: 1200px;
-
+     max-width: 1200px;
+/*
     margin:
         0 auto 40px;
 
-    display: grid;
+    display: grid; */
 
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+    /* grid-template-columns:
+        repeat(3, minmax(0, 1fr)); */
 
-    gap: 40px;
+   
 }
 
 
@@ -1455,13 +1450,13 @@ a {
         var(--ju-rose);
 
     font-size:
-        1rem;
+        30px;
 
     text-transform:
         uppercase;
 
     letter-spacing:
-        1px;
+        5px;
 }
 
 
@@ -1471,10 +1466,10 @@ a {
         8px;
 
     color:
-        var(--ju-cream);
+        rgb(197, 186, 186);
 
     font-size:
-        0.9rem;
+        20px;
 }
 
 
@@ -1490,8 +1485,9 @@ a {
 
 .footer-grid a {
 
+    font-size: 30px;
     color:
-        var(--ju-cream);
+       rgb(0, 0, 255);
 
     text-decoration:
         none;
@@ -2195,9 +2191,10 @@ a {
 
     .desktop-navigation,
     .site-header > .nav-bar > .btn-contato {
-        display:
-            none;
+        
+        display: none;
     }
+  
 
     .mobile-menu-btn {
         display:
@@ -2221,12 +2218,15 @@ a {
 
     .hero h1 {
         font-size:
-            3.2rem;
+            30px;
     }
 
     .hero p {
         font-size:
             0.95rem;
+    }
+    .hero span {
+        size: 30px;
     }
 
     .essencia {
@@ -2364,6 +2364,136 @@ a {
             none;
     }
 
+}
+
+/* ====================================================================
+   SOCIALS
+   ==================================================================== */
+.sociais-title {
+    color: var(--skin-color);
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.logosocias {
+    display: flex; /* Ativa o flexbox para o contêiner */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 20px; /* Adiciona espaçamento entre os itens */
+    margin-top: 30px; /* Espaço acima dos links */
+    /* Remove text-align: center; daqui, pois ele não é necessário no contêiner flex */
+}
+
+.logosocias a {
+    display: flex; /* Faz cada link ser um contêiner flexível */
+    flex-direction: column; /* Organiza ícone e texto verticalmente */
+    align-items: center; /* Centraliza ícone e texto horizontalmente dentro do link */
+    color: var(--text-black-900); /* Cor padrão do texto */
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Transição para hover */
+    padding: 10px 15px; /* Padding para a área clicável */
+    border-radius: 5px; /* Leve arredondamento */
+    /* Remove background-color: var(--skin-color); e border-radius: 50%; daqui,
+       pois você tem o ícone e o texto separadamente, e eles não devem ser um círculo de fundo.
+       Se você quer o fundo colorido no ícone, ele vai no .bx ou <span>. */
+}
+
+.logosocias a:hover {
+    color: var(--skin-color); /* Muda a cor do texto ao passar o mouse */
+    transform: scale(1.1); /* Faz o item inteiro crescer um pouco */
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); /* Sombra suave no hover */
+}
+
+.logosocias a span 
+ { /* Para os spans que contêm os Boxicons (bx) */
+   
+    display: flex; /* Flexbox para centralizar o ícone */
+    justify-content: center;
+    align-items: center;
+    height: 48px; /* Tamanho do círculo do ícone */
+    width: 48px; /* Tamanho do círculo do ícone */
+    background-color: var(--skin-color); /* Cor de fundo do círculo */
+    border-radius: 50%; /* Faz o círculo */
+    margin-bottom: 5px; /* Espaço entre o ícone e o texto */
+    color: #fffafa; /* Cor do ícone dentro do círculo */
+    transition: all 0.3s ease;
+}
+.sociais{
+    cursor: pointer;
+    content: '';
+    top: 0;
+    left: 200px;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, var(--skin-color) 0%, transparent 70%); /* Brilho radial */
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Garante que o brilho não interfira com eventos do mouse */
+    z-index: -1; /* Coloca o brilho atrás do conteúdo */
+}
+.sociais-medias-section {
+    /* seus estilos para a seção inteira, se houver */
+    display: block; /* Garanta que ela não está oculta por padrão */
+    /* ... outros estilos ... */
+    margin-left: 0px;
+    /* margin-bottom: 0px; */
+}
+
+
+.logosocias a:hover span {
+    background-color: var(--text-black-900); /* Muda a cor do fundo do círculo no hover */
+    color: var(--skin-color); /* Mantém a cor do ícone ou muda se quiser */
+}
+
+.logosocias a i { /* Para os ícones Boxicons diretos (se não estiverem em span) */
+    font-size: 30px; /* Tamanho do ícone Boxicons */
+    line-height: 48px; /* Para centralizar verticalmente se o 'a' não for flex */
+    /* Se o 'a' é flex-direction: column e align-items: center, line-height não é tão crítico aqui */
+}
+
+.bx {
+    font-size: 24px;
+}
+/* No seu style.css, adicione estas regras: */
+
+.logosocias {
+    display: flex; /* Ativa o flexbox */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha quando não há espaço */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 15px; /* Adiciona um espaço entre os itens */
+    margin-top: 30px; /* Adiciona um pouco de espaço acima dos links */
+    text-align: center; /* Centraliza o texto dentro dos links */
+}
+
+.logosocias a {
+    display: flex; /* Faz cada link ser um contêiner flexível */
+    flex-direction: column; /* Organiza ícone e texto verticalmente */
+    align-items: center; /* Centraliza o ícone e o texto horizontalmente dentro do link */
+    color: var(--text-black-900); /* Use a cor do seu tema */
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 10px; /* Adiciona um pouco de padding para área de clique */
+    border-radius: 5px; /* Leve arredondamento */
+}
+
+.logosocias a:hover {
+    color: var(--skin-color); /* Muda a cor ao passar o mouse */
+}
+
+.logosocias a span {
+    display: block; /* Garante que o span com o ícone seja um bloco */
+    font-size: 30px; /* Ajuste o tamanho do ícone */
+    margin-bottom: 5px; /* Espaço entre o ícone e o texto */
+}
+
+.logosocias a i {
+    font-size: 30px; /* Garante que o ícone do Boxicons tenha um tamanho adequado */
+    margin-bottom: 5px; /* Espaço entre o ícone e o texto */
 }
 
 

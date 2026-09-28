@@ -16,6 +16,9 @@
     <!-- =====================================================
          GOOGLE FONTS
     ====================================================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -105,7 +108,7 @@
 
             <!-- CONTATO -->
 
-            <a href="#contato" class="btn-contato">
+            <a href="" class="btn-contato">
 
                 Fale Conosco
 
@@ -172,10 +175,6 @@
                 <img src="img/banner.jpeg" alt="Ju Papelaria Personalizada" class="banner-img"
                     onerror="this.src='https://placehold.co/1200x400/FFF5F5/B68A7A?text=Insira+banner.jpeg+na+pasta+img'">
 
-
-                <span class="hero-label">
-                    JU PAPELARIA PERSONALIZADA
-                </span>
 
 
                 <h1>
@@ -458,13 +457,14 @@
                             apresentar e valorizar seus materiais.
                         </p>
 
-                        <a href="#contato" class="produto-btn">
+                        <a href="https://l.instagram.com/?u=https%3A%2F%2Fwa.me%2F557196737157%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAadBveb6VuieLHu96IusBNAiuqHmeREIxuindwIZDStI6-Xhjt_WxMOzgg2KPQ_aem_LnCSwedE4RM_Pneg1POkjA&e=AUAhX0VpdoLc85sEqtRlPjec1dIn9g0AJRezJusSkQgQi0c8RYK9aQVWE21hdsTv64X2X3mFsLeYqwBCE-ko-TzBaUDiXCuBs2erqiLNHjAnWdkuavWx2_srtvvERf_rI8LhUzQ"
+                            class="produto-btn">
 
                             Quero personalizar
 
                             <i data-lucide="arrow-right"></i>
 
-                        </a>
+                        </a class=contato>
 
                     </div>
 
@@ -577,13 +577,14 @@
                             com exclusividades, diferentes estilos e Personalizadas.
                         </p>
 
-                        <a href="#contato" class="produto-btn">
+                        <a href="https://l.instagram.com/?u=https%3A%2F%2Fwa.me%2F557196737157%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAadBveb6VuieLHu96IusBNAiuqHmeREIxuindwIZDStI6-Xhjt_WxMOzgg2KPQ_aem_LnCSwedE4RM_Pneg1POkjA&e=AUAhX0VpdoLc85sEqtRlPjec1dIn9g0AJRezJusSkQgQi0c8RYK9aQVWE21hdsTv64X2X3mFsLeYqwBCE-ko-TzBaUDiXCuBs2erqiLNHjAnWdkuavWx2_srtvvERf_rI8LhUzQ"
+                            class="produto-btn">
 
                             Quero personalizar
 
                             <i data-lucide="arrow-right"></i>
 
-                        </a>
+                        </a class=contato>
 
                     </div>
 
@@ -605,85 +606,90 @@
 
                             <div class="carousel-slide active" data-index="0">
 
-                                <img src="img/produtos/bottons/BOTTON capa.png"
-                                    alt="Bottons personalizados — modelo principal" loading="lazy"
+                                <img src="img/" alt="Bottons personalizados — modelo principal" loading="lazy"
                                     class="carousel-image">
 
                             </div>
 
 
-                            <div class="carousel-slide" data-index="1">
+                            <div class="produto-carousel">
 
-                                <img src="img/produtos/bottons/BOTTON 2.png"
-                                    alt="Bottons personalizados — segundo modelo" loading="lazy" class="carousel-image">
+                                <div class="carousel-track">
+
+
+                                    <!-- <div class="carousel-slide active" data-index="0"> -->
+
+                                    <img src="img/Em Breve.png" alt="Bottons personalizados — modelo principal"
+                                        loading="lazy" class="carousel-image">
+
+                                </div>
+
+
+                                <div class="carousel-slide" data-index="2">
+
+                                    <img src="img/produtos/bottons/BOTTON 3.png"
+                                        alt="Bottons personalizados — terceiro modelo" loading="lazy"
+                                        class="carousel-image">
+
+                                </div>
 
                             </div>
 
 
-                            <div class="carousel-slide" data-index="2">
+                            <button type="button" class="carousel-btn prev" aria-label="Ver imagem anterior"
+                                data-direction="-1">
 
-                                <img src="img/produtos/bottons/BOTTON 3.png"
-                                    alt="Bottons personalizados — terceiro modelo" loading="lazy"
-                                    class="carousel-image">
+                                <i data-lucide="chevron-left"></i>
 
+                            </button>
+
+
+                            <button type="button" class="carousel-btn next" aria-label="Ver próxima imagem"
+                                data-direction="1">
+
+                                <i data-lucide="chevron-right"></i>
+
+                            </button>
+
+
+                            <div class="carousel-dots" aria-label="Imagens do produto">
                             </div>
 
+
+                            <button type="button" class="zoom-hint" aria-label="Ver imagem em tela cheia">
+
+                                <i data-lucide="maximize-2"></i>
+
+                            </button>
+
                         </div>
 
 
-                        <button type="button" class="carousel-btn prev" aria-label="Ver imagem anterior"
-                            data-direction="-1">
+                        <div class="produto-info">
 
-                            <i data-lucide="chevron-left"></i>
+                            <span class="produto-categoria">
+                                PERSONALIZAÇÃO
+                            </span>
 
-                        </button>
+                            <h3>
+                                Bottons Personalizados
+                            </h3>
 
+                            <p>
+                                Bottons personalizados para eventos,
+                                lembranças, empresas, festas e ocasiões especiais.
+                            </p>
 
-                        <button type="button" class="carousel-btn next" aria-label="Ver próxima imagem"
-                            data-direction="1">
+                            <a href="https://api.whatsapp.com/send/?phone=557196737157&text&type=phone_number&app_absent=0&utm_source=ig"
+                                class="produto-btn">
 
-                            <i data-lucide="chevron-right"></i>
+                                Quero personalizar
 
-                        </button>
+                                <i data-lucide="arrow-right"></i>
 
+                            </a class=contato>
 
-                        <div class="carousel-dots" aria-label="Imagens do produto">
                         </div>
-
-
-                        <button type="button" class="zoom-hint" aria-label="Ver imagem em tela cheia">
-
-                            <i data-lucide="maximize-2"></i>
-
-                        </button>
-
-                    </div>
-
-
-                    <div class="produto-info">
-
-                        <span class="produto-categoria">
-                            PERSONALIZAÇÃO
-                        </span>
-
-                        <h3>
-                            Bottons Personalizados
-                        </h3>
-
-                        <p>
-                            Bottons personalizados para eventos,
-                            lembranças, empresas, festas e ocasiões especiais.
-                        </p>
-
-                        <a href="#contato" class="produto-btn">
-
-                            Quero personalizar
-
-                            <i data-lucide="arrow-right"></i>
-
-                        </a>
-
-                    </div>
 
                 </article>
 
@@ -701,88 +707,93 @@
                         <div class="carousel-track">
 
 
-                            <div class="carousel-slide active" data-index="0">
+                            <div class="produto-carousel">
 
-                                <img src="img/produtos/cordao/CORDAO capa.png"
-                                    alt="Cordão para porta crachá personalizado — modelo principal" loading="lazy"
-                                    class="carousel-image">
+                                <div class="carousel-track">
+
+
+                                    <!-- <div class="carousel-slide active" data-index="0"> -->
+
+                                    <img src="img/Em Breve.png" alt="Bottons personalizados — modelo principal"
+                                        loading="lazy" class="carousel-image">
+
+                                </div>
+
+
+                                <div class="carousel-slide" data-index="1">
+
+                                    <img src="img/produtos/cordao/CORDAO 2.png"
+                                        alt="Cordão personalizado para crachá — segundo modelo" loading="lazy"
+                                        class="carousel-image">
+
+                                </div>
+
+
+                                <div class="carousel-slide" data-index="2">
+
+                                    <img src="img/produtos/cordao/CORDAO 3.png"
+                                        alt="Cordão personalizado para crachá — terceiro modelo" loading="lazy"
+                                        class="carousel-image">
+
+                                </div>
 
                             </div>
 
 
-                            <div class="carousel-slide" data-index="1">
+                            <button type="button" class="carousel-btn prev" aria-label="Ver imagem anterior"
+                                data-direction="-1">
 
-                                <img src="img/produtos/cordao/CORDAO 2.png"
-                                    alt="Cordão personalizado para crachá — segundo modelo" loading="lazy"
-                                    class="carousel-image">
+                                <i data-lucide="chevron-left"></i>
 
+                            </button>
+
+
+                            <button type="button" class="carousel-btn next" aria-label="Ver próxima imagem"
+                                data-direction="1">
+
+                                <i data-lucide="chevron-right"></i>
+
+                            </button>
+
+
+                            <div class="carousel-dots" aria-label="Imagens do produto">
                             </div>
 
 
-                            <div class="carousel-slide" data-index="2">
+                            <button type="button" class="zoom-hint" aria-label="Ver imagem em tela cheia">
 
-                                <img src="img/produtos/cordao/CORDAO 3.png"
-                                    alt="Cordão personalizado para crachá — terceiro modelo" loading="lazy"
-                                    class="carousel-image">
+                                <i data-lucide="maximize-2"></i>
 
-                            </div>
+                            </button>
 
                         </div>
 
 
-                        <button type="button" class="carousel-btn prev" aria-label="Ver imagem anterior"
-                            data-direction="-1">
+                        <div class="produto-info">
 
-                            <i data-lucide="chevron-left"></i>
+                            <span class="produto-categoria">
+                                CORPORATIVO
+                            </span>
 
-                        </button>
+                            <h3>
+                                Cordão para Porta Crachá
+                            </h3>
 
+                            <p>
+                                Cordões personalizados para empresas,
+                                eventos, equipes e identificação profissional.
+                            </p>
 
-                        <button type="button" class="carousel-btn next" aria-label="Ver próxima imagem"
-                            data-direction="1">
+                            <a href="https://l.instagram.com/?u=https%3A%2F%2Fwa.me%2F557196737157%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAadBveb6VuieLHu96IusBNAiuqHmeREIxuindwIZDStI6-Xhjt_WxMOzgg2KPQ_aem_LnCSwedE4RM_Pneg1POkjA&e=AUAhX0VpdoLc85sEqtRlPjec1dIn9g0AJRezJusSkQgQi0c8RYK9aQVWE21hdsTv64X2X3mFsLeYqwBCE-ko-TzBaUDiXCuBs2erqiLNHjAnWdkuavWx2_srtvvERf_rI8LhUzQ"
+                                class="produto-btn">
 
-                            <i data-lucide="chevron-right"></i>
+                                Quero personalizar
 
-                        </button>
+                                <i data-lucide="arrow-right"></i>
 
+                            </a class=contato>
 
-                        <div class="carousel-dots" aria-label="Imagens do produto">
                         </div>
-
-
-                        <button type="button" class="zoom-hint" aria-label="Ver imagem em tela cheia">
-
-                            <i data-lucide="maximize-2"></i>
-
-                        </button>
-
-                    </div>
-
-
-                    <div class="produto-info">
-
-                        <span class="produto-categoria">
-                            CORPORATIVO
-                        </span>
-
-                        <h3>
-                            Cordão para Porta Crachá
-                        </h3>
-
-                        <p>
-                            Cordões personalizados para empresas,
-                            eventos, equipes e identificação profissional.
-                        </p>
-
-                        <a href="#contato" class="produto-btn">
-
-                            Quero personalizar
-
-                            <i data-lucide="arrow-right"></i>
-
-                        </a>
-
-                    </div>
 
                 </article>
 
@@ -867,88 +878,17 @@
 
 
         <div class="footer-grid">
-
-
-            <div>
-
-                <h3>
-                    Ju Papelaria
-                </h3>
-
-                <p>
-                    Produtos personalizados feitos com carinho
-                    para momentos especiais.
-                </p>
-
-                <p>
-                    Enviamos para todo o Brasil!
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <h3>
-                    Navegação
-                </h3>
-
                 <ul>
 
                     <li>
-                        <a href="#inicio">
-                            Início
-                        </a>
-                    </li>
+                        <a href="https://www.instagram.com/juliepapelariap/">
+                            Instagram: @juliepapelariap
 
-                    <li>
-                        <a href="#proposito">
-                            Propósito
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#produtos">
-                            Produtos
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#sobre">
-                            Sobre
                         </a>
                     </li>
 
                 </ul>
-
             </div>
-
-
-            <div>
-
-                <h3>
-                    Contato
-                </h3>
-
-                <ul>
-
-                    <li>
-                        <a href="#">
-                            Instagram: @jugopapelaria
-                        </a>
-                    </li>
-
-                    <li>
-                        <span>
-                            Ateliê Online — Brasil
-                        </span>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
 
 
         <div class="footer-copy">
@@ -1057,9 +997,33 @@
             </div>
 
 
-            <!-- INFORMAÇÃO -->
 
-            <div class="lightbox-footer">
+            <!-- ================ sociais start ================ -->
+
+            <section class="sociais-medias-section" id="social-medias">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2>Social Medias</h2>
+                            <div class="sociais-info-item padd-15">
+                            </div>
+                            <div class="logosocias">
+                                <a href="https://github.com/EngSennk"><span><i class="bx bxl-github"></i></span></a>
+                                <a href="https://api.whatsapp.com/send/?phone=557196737157&text&type=phone_number&app_absent=0&utm_source=ig"
+                                    <a href="https://instagram.com/engdsena"><span><i
+                                            class="bx bxl-instagram"></i></span></a>
+                                <a href="https://www.facebook.com/profile.php?id=61571375866279"><span><i
+                                            class="bx bxl-facebook-circle"></i></span></a>
+                                <a href="https://x.com/EngenheiroSennk"><span><i class="bx bxl-twitter"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================ sociais end ================ -->
+
+            <!-- <div class="lightbox-footer">
 
                 <span id="lightbox-counter">
                     1 / 1
@@ -1073,16 +1037,15 @@
 
         </div>
 
-    </div>
+    </div> -->
 
-
-
-    <!-- =====================================================
+            <!-- =====================================================
          JAVASCRIPT
     ====================================================== -->
-
-    <script src="js/script.js" defer>
-    </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+                referrerpolicy="no-referrer"></script>
+            <script src="js/script.js" defer>
+            </script>
 
 
 </body>
