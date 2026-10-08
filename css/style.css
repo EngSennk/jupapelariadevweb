@@ -229,7 +229,7 @@ a {
         none;
 
     font-size:
-        0.95rem;
+        20px;
 
     font-weight:
         600;
@@ -291,7 +291,7 @@ a {
         50px;
 
     background:
-        var(--ju-brown);
+        pink;
 
     color:
         white;
@@ -300,7 +300,7 @@ a {
         none;
 
     font-size:
-        0.9rem;
+       15px;
 
     font-weight:
         600;
@@ -424,7 +424,7 @@ a {
 
     width: 100%;
 
-    max-width: 1100px;
+    max-width: 1000px;
 
     margin: 0 auto;
 }
@@ -519,7 +519,7 @@ a {
         12px 28px;
 
     border:
-        2px solid var(--ju-brown);
+        4px solid rgb(233, 182, 132);
 
     border-radius:
         50px;
@@ -530,8 +530,7 @@ a {
     text-decoration:
         none;
 
-    font-weight:
-        600;
+    font-size: 20px;
 
     transition:
         all 0.3s ease;
@@ -611,7 +610,7 @@ a {
         #8C756D;
 
     font-size:
-        0.95rem;
+        35px;
 }
 
 
@@ -648,83 +647,63 @@ a {
 
 
 .card-essencia {
+    padding: 30px 25px;
+    background: var(--ju-bg);
+    border: 1px solid rgba(182, 138, 122, 0.08);
+    border-radius: 18px;
+    text-align: center;
 
-    padding:
-        30px 25px;
-
-    background:
-        var(--ju-bg);
-
-    border:
-        1px solid rgba(182, 138, 122, 0.08);
-
-    border-radius:
-        18px;
-
-    text-align:
-        center;
-
-    transition:
+    /* Adicionadas as propriedades background-color e border-color na transição */
+    transition: 
         transform 0.3s ease,
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
 }
-
 
 .card-essencia:hover {
-
-    transform:
-        translateY(-6px);
-
-    box-shadow:
-        var(--ju-shadow);
+    transform: translateY(-6px);
+    box-shadow: var(--ju-shadow);
+    
+    /* Altere para a cor/variável de fundo desejada no hover */
+    background-color: rgba(234, 182, 194, 0.15); 
+    
+    /* Opcional: altera a cor da borda no hover */
+    border-color: rgba(182, 138, 122, 0.25);
 }
-
 
 .card-icon {
-
     width: 60px;
-
     height: 60px;
-
-    margin:
-        0 auto 20px;
-
+    margin: 0 auto 20px;
     display: flex;
-
     align-items: center;
-
     justify-content: center;
+    background: rgba(234, 182, 194, 0.30);
+    border-radius: 50%;
+    color: var(--ju-brown);
 
-    background:
-        rgba(234, 182, 194, 0.30);
-
-    border-radius:
-        50%;
-
-    color:
-        var(--ju-brown);
+    /* Adicionada a transição suave para o ícone e fundo do ícone */
+    transition: 
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
+/* Transição do ícone ao passar o mouse no card */
+.card-essencia:hover .card-icon {
+    background: var(--ju-brown);
+    color: #ffffff;
+}
 
 .card-essencia h3 {
-
     margin-bottom: 10px;
-
-    color:
-        var(--ju-brown);
-
-    font-size:
-        1.15rem;
+    color: var(--ju-brown);
+    font-size: 1.15rem;
 }
 
-
 .card-essencia p {
-
-    color:
-        var(--ju-text-light);
-
-    font-size:
-        20px;
+    color: var(--ju-text-light);
+    font-size: 20px;
 }
 
 
@@ -2466,13 +2445,14 @@ a {
     gap: 15px; /* Adiciona um espaço entre os itens */
     margin-top: 30px; /* Adiciona um pouco de espaço acima dos links */
     text-align: center; /* Centraliza o texto dentro dos links */
+    
 }
 
 .logosocias a {
     display: flex; /* Faz cada link ser um contêiner flexível */
     flex-direction: column; /* Organiza ícone e texto verticalmente */
     align-items: center; /* Centraliza o ícone e o texto horizontalmente dentro do link */
-    color: var(--text-black-900); /* Use a cor do seu tema */
+    color: var(--ju-brown-dark); /* Use a cor do seu tema */
     font-size: 16px;
     font-weight: 500;
     text-decoration: none;
@@ -2482,7 +2462,7 @@ a {
 }
 
 .logosocias a:hover {
-    color: var(--skin-color); /* Muda a cor ao passar o mouse */
+    color: var(--ju-rose); /* Muda a cor ao passar o mouse */
 }
 
 .logosocias a span {
@@ -2492,7 +2472,8 @@ a {
 }
 
 .logosocias a i {
-    font-size: 30px; /* Garante que o ícone do Boxicons tenha um tamanho adequado */
+    color:var(--ju-brown-dark);
+    font-size: 60px; /* Garante que o ícone do Boxicons tenha um tamanho adequado */
     margin-bottom: 5px; /* Espaço entre o ícone e o texto */
 }
 
